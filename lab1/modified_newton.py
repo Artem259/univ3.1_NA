@@ -1,4 +1,4 @@
-from math import e, log, log2, log10, floor
+from math import e, log10
 
 
 def my_func(x):
