@@ -3,6 +3,7 @@ import input
 
 
 def square_root(A, b):
+    np.set_printoptions(precision=4, floatmode='fixed')
     print("A = \n", A, "\n")
     print("b = \n", b, "\n")
     print("--------------------------\n")
@@ -39,17 +40,18 @@ def square_root(A, b):
         x[i] = y[i] - np.sum(
             [S[i][j] * x[j] for j in reversed(range(N)[i+1:])])
         x[i] /= S[i][i]
+    np.set_printoptions(precision=8, floatmode='fixed')
     print("x = \n", x, "\n")
 
     det = 1
     for i in range(N):
         det *= D[i][i] * (S[i][i]**2)
-    print("det(A) = ", det, "\n")
+    print("det(A) =", det, "\n")
 
 
 if __name__ == '__main__':
     print("\n--- Square Root method ---\n")
-    np.set_printoptions(precision=4, floatmode='fixed')
+
     square_root(input.A_, input.b_)
     # square_root(np.array([[1, 2, 3], [2, 5, 5], [3, 5, 6]]),
     #             np.array([1, 2, 3]))

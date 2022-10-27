@@ -10,6 +10,7 @@ def matrix_norm(M):
 
 
 def condition_number(A):
+    np.set_printoptions(precision=4, floatmode='fixed')
     print("A = \n", A, "\n")
     print("--------------------------\n")
 
@@ -18,16 +19,15 @@ def condition_number(A):
 
     norm_A = matrix_norm(A)
     norm_inv_A = matrix_norm(inv_A)
-    print("|| A || = ", norm_A, "\n")
-    print("|| A^(-1) || = ", norm_inv_A, "\n")
+    print("|| A || =", norm_A, "\n")
+    print("|| A^(-1) || =", norm_inv_A, "\n")
 
     cond = norm_A * norm_inv_A
-    print("cond(A) = ", cond, "\n")
+    print("cond(A) =", cond, "\n")
 
 
 if __name__ == '__main__':
     print("\n--- Condition Number ---\n")
-    np.set_printoptions(precision=4, floatmode='fixed')
 
     condition_number(input.A_)
     # condition_number(np.array([[1, 0.99], [0.99, 0.98]]))
