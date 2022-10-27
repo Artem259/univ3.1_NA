@@ -6,6 +6,7 @@ def jacobi(A, b, e):
     np.set_printoptions(precision=4, floatmode='fixed')
     print("A = \n", A, "\n")
     print("b = \n", b, "\n")
+    print("e =", e, "\n")
     print("--------------------------\n")
     N = len(A)
     flag = True
@@ -42,7 +43,7 @@ def jacobi(A, b, e):
             x_next[i] += b[i]/A[i][i]
         norm = np.max(abs(x_next - x_curr))
         if norm <= e or iteration == 1:
-            print("[", iteration, "] norm =", norm)
+            print("[" + str(iteration) + "] norm (inf) =", norm)
             if norm <= e:
                 break
         iteration += 1
