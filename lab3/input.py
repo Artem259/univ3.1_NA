@@ -8,6 +8,8 @@ def f(x):
 interval = [-1, 1]
 nodes = 10
 
+# -----------------------------------------
+
 # from math import log
 #
 #

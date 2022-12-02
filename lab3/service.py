@@ -1,6 +1,6 @@
 import numpy as np
-from numpy.polynomial import Polynomial
 from matplotlib import pyplot as plt
+from numpy.polynomial import Polynomial
 
 
 def divided_differences(x_vector, f_vector):
