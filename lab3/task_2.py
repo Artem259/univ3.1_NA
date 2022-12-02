@@ -1,7 +1,7 @@
 from math import cos, pi
 
 import input
-from service import *
+from task import task
 
 
 def chebyshev_nodes_vector(a, b, nodes):
@@ -12,18 +12,6 @@ def chebyshev_nodes_vector(a, b, nodes):
     return x_vector
 
 
-def task_1(f, a, b, nodes):
-    if f(a) * f(b) >= 0:
-        raise Exception("Invalid interval")
-    x_vector = chebyshev_nodes_vector(a, b, nodes)
-    print("Nodes = \n", x_vector, "\n")
-    polynomial = build_polynomial(x_vector, f)
-    print("Polynomial = \n", polynomial, "\n")
-    root = solve_polynomial(polynomial, a, b)
-    print("x = \n", root)
-    show_plot(f, polynomial, a, b, "Task 2")
-
-
 if __name__ == '__main__':
     print("\n--- Task 2 ---\n")
-    task_1(input.f, input.interval[0], input.interval[1], input.nodes)
+    task(input.f, input.interval[0], input.interval[1], input.nodes, chebyshev_nodes_vector, "Task 2")
